@@ -152,8 +152,7 @@ In my case is **`fastcgi_pass sample_app:9001;`**
 Please note that the data folder holds your real MySQL backup. But if it’s not important for you, it should be deleted (In some case, that folder make some troubles)
 - Access the URL below for starting:
 `http://localhost:< WEB_PORT >`
-
-In my case:
+. In my case:
 `http://localhost:8000`
 
 > Happy coding !
