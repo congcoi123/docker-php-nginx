@@ -127,21 +127,21 @@ Nginx service port, because of the containers and host machine share resources. 
 Same with `WS_WEB_PORT` but for SSL.
 #### WS_DB_PORT
 For preventing conflict with your in-use port in your host machine, you can change the MySQL’s port.
-- Step 1:
+**- Step 1:**
 Change the `DB_PORT` definition with your new port.
-- Step 2:
+**- Step 2:**
 Make the change in `/docker/db/conf/my.cnf` file with the same new port.
 ![my.cnf](https://github.com/TenMei/docker-php-nginx/blob/master/screenshots/db_my_cnf.png)
 
 #### FPM_PORT
 For preventing conflict with your in-use port in your host machine, you can change the PHP-fpm port. FPM is a process manager to manage the FastCGI SAPI (Server API) in PHP. Basically, it replaces the need for something like SpawnFCGI . It spawns the FastCGI children adaptively (meaning launching more if the current load requires it). Otherwise, there's not much operating difference between it and FastCGI (The request pipeline from the start of the request to end is the same). It's just there to make implementing it easier.
-- Step 1:
+- **Step 1:**
 Change the `FPM_PORT` definition with your new port.
-- Step 2:
+- **Step 2:**
 Make the same change in `/docker/app/conf/www.conf` file at listen
 definition.
 ![www.conf](https://github.com/TenMei/docker-php-nginx/blob/master/screenshots/fpm_conf.png)
-- Step 3:
+- **Step 3:**
 Make some changes in `/docker/web/conf/nginx.conf` . All the
 `fastcgi_pass` definition must be set to new pattern **`sample_app:<your_new_port>;`**
 In my case is **`fastcgi_pass sample_app:9001;`**
@@ -152,6 +152,7 @@ In my case is **`fastcgi_pass sample_app:9001;`**
 Please note that the data folder holds your real MySQL backup. But if it’s not important for you, it should be deleted (In some case, that folder make some troubles)
 - Access the URL below for starting:
 `http://localhost:< WEB_PORT >`
+
 In my case:
 `http://localhost:8000`
 
