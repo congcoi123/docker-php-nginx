@@ -126,7 +126,7 @@ The project’s name and identification. Please do not modify it.
 #### WEB_PORT
 Nginx service port, because of the containers and host machine share resources. So you can access the program by your browser. Just use: **`localhost:<port>/`** . In my case, I can use **`localhost:8000/`**
 #### WEB_SSL_PORT
-Same with `WS_WEB_PORT` but for SSL.
+Same with `WEB_PORT` but for SSL.
 #### DB_PORT
 For preventing conflict with your in-use port in your host machine, you can change the MySQL’s port.
 - **Step 1:**
