@@ -24,7 +24,7 @@ This project is currently available under the [MIT](https://github.com/TenMei/do
 
 ## Installation
 You can get the sources:
-```
+```sh
 git clone https://github.com/TenMei/docker-php-nginx.git
 ```
 
@@ -151,7 +151,7 @@ In my case is **`fastcgi_pass sample_app:9001;`**
 
 ### Start
 Run the following instructions for the starting setup.
-```
+```sh
 $cd /docker-php-nginx/docker/startup
 $bash docker_setup.sh
 ```
