@@ -127,11 +127,11 @@ The project’s name and identification. Please do not modify it.
 Nginx service port, because of the containers and host machine share resources. So you can access the program by your browser. Just use: **`localhost:<port>/`** . In my case, I can use **`localhost:8000/`**
 #### WEB_SSL_PORT
 Same with `WS_WEB_PORT` but for SSL.
-#### WS_DB_PORT
+#### DB_PORT
 For preventing conflict with your in-use port in your host machine, you can change the MySQL’s port.
-**- Step 1:**
+- **Step 1:**
 Change the `DB_PORT` definition with your new port.
-**- Step 2:**
+- **Step 2:**
 Make the change in `/docker/db/conf/my.cnf` file with the same new port.
 ![my.cnf](https://github.com/TenMei/docker-php-nginx/blob/master/screenshots/db_my_cnf.png)
 
