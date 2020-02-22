@@ -20,17 +20,17 @@ communicate with each other through well-defined channels.
 - Engine: 19.03.4
 
 ## License
-This project is currently available under the [MIT](https://github.com/TenMei/docker-php-nginx/blob/master/LICENSE) License.
+This project is currently available under the [MIT](https://github.com/congcoi123/docker-php-nginx/blob/master/LICENSE) License.
 
 ## Installation
 You can get the sources:
 ```sh
-git clone https://github.com/TenMei/docker-php-nginx.git
+git clone https://github.com/congcoi123/docker-php-nginx.git
 ```
 
 ## Manual
 ### Project Structure
-![Project Structure](https://github.com/TenMei/docker-php-nginx/blob/master/screenshots/project_structure.png)
+![Project Structure](https://github.com/congcoi123/docker-php-nginx/blob/master/screenshots/project_structure.png)
 #### a. docker/ app cache db web
 Include all of the environment’s settings by Docker for this project.
 #### b. docker/gen/cache
@@ -120,7 +120,7 @@ Stop all services.
 ### Environment Variables
 All the environment is saved in the `.env` file.
 
-![Environment Variables](https://github.com/TenMei/docker-php-nginx/blob/master/screenshots/environment_setting.png)
+![Environment Variables](https://github.com/congcoi123/docker-php-nginx/blob/master/screenshots/environment_setting.png)
 #### COMPOSE_PROJECT_NAME
 The project’s name and identification. Please do not modify it.
 #### WEB_PORT
@@ -133,7 +133,7 @@ For preventing conflict with your in-use port in your host machine, you can chan
 Change the `DB_PORT` definition with your new port.
 - **Step 2:**
 Make the change in `/docker/db/conf/my.cnf` file with the same new port.
-![my.cnf](https://github.com/TenMei/docker-php-nginx/blob/master/screenshots/db_my_cnf.png)
+![my.cnf](https://github.com/congcoi123/docker-php-nginx/blob/master/screenshots/db_my_cnf.png)
 
 #### FPM_PORT
 For preventing conflict with your in-use port in your host machine, you can change the PHP-fpm port. FPM is a process manager to manage the FastCGI SAPI (Server API) in PHP. Basically, it replaces the need for something like SpawnFCGI . It spawns the FastCGI children adaptively (meaning launching more if the current load requires it). Otherwise, there's not much operating difference between it and FastCGI (The request pipeline from the start of the request to end is the same). It's just there to make implementing it easier.
@@ -142,12 +142,12 @@ Change the `FPM_PORT` definition with your new port.
 - **Step 2:**
 Make the same change in `/docker/app/conf/www.conf` file at listen
 definition.
-![www.conf](https://github.com/TenMei/docker-php-nginx/blob/master/screenshots/fpm_conf.png)
+![www.conf](https://github.com/congcoi123/docker-php-nginx/blob/master/screenshots/fpm_conf.png)
 - **Step 3:**
 Make some changes in `/docker/web/conf/nginx.conf` . All the
 `fastcgi_pass` definition must be set to new pattern **`sample_app:<your_new_port>;`**
 In my case is **`fastcgi_pass sample_app:9001;`**
-![nginx.conf](https://github.com/TenMei/docker-php-nginx/blob/master/screenshots/fpm_nginx.png)
+![nginx.conf](https://github.com/congcoi123/docker-php-nginx/blob/master/screenshots/fpm_nginx.png)
 
 ### Start
 Run the following instructions for the starting setup.
